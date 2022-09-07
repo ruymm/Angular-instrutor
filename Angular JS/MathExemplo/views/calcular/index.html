@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="appAngular">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MathExemplo</title>
+</head>
+<body ng-controller="Principal as clt">
+    <input type="text" ng-model="clt.valor" placeholder="Digite um numero"/>
+    <button ng-click="clt.calcularQuadrado()">Calcular quadrado</button>
+    <br />
+    <div ng-bind="clt.resultado"></div>
+</body>
+</html>

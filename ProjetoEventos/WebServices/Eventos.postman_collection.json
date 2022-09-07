@@ -1,0 +1,126 @@
+{
+	"info": {
+		"_postman_id": "b3d8656b-b3f3-4275-9286-2e79f667e4dc",
+		"name": "Eventos",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "6408824"
+	},
+	"item": [
+		{
+			"name": "Listar eventos",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3200/eventos",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3200",
+					"path": [
+						"eventos"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Buscar eventos por ID",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3200/eventos/630d650e88f2816c98bca7f2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3200",
+					"path": [
+						"eventos",
+						"630d650e88f2816c98bca7f2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Cadastrar evento",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"descricao\": \"Aula Node\",\n    \"data\": \"08-26-2022\",\n    \"preco\": 1000\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3200/eventos",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3200",
+					"path": [
+						"eventos"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Atualizar evento",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"descricao\": \"Aula Angular\",\n    \"data\": \"08-26-2022\",\n    \"preco\": 1000\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3200/eventos/630d650e88f2816c98bca7f2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3200",
+					"path": [
+						"eventos",
+						"630d650e88f2816c98bca7f2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Deletar evento",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3200/eventos/630d655b88f2816c98bca7f9",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3200",
+					"path": [
+						"eventos",
+						"630d655b88f2816c98bca7f9"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

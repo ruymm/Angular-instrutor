@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="eventos">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eventos</title>
+</head>
+
+<body ng-controller="Principal as clt">
+    <h2>Lista de eventos</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Descrição</th>
+                <th>Data</th>
+                <th>Preço</th>
+            </tr>
+        </thead>
+        <tbody ng-repeat="evento in clt.eventos">
+            <tr>
+                <td>
+                    {{evento.descricao}}
+                </td>
+                <td>
+                    {{evento.data}}
+                </td>
+                <td>
+                    {{evento.preco}}
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+
+</html>

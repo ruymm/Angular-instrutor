@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="appModule">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exemplo 1</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    <script src="appModule.js"></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body ng-controller="Principal as ctl">
+    Visualizar mensagem: {{ctl.mensagem}}
+    <button ng-click="ctl.alterarMensagem()">
+        Alterar mensagem
+    </button>
+
+    <section>
+        <h2>Formularios</h2>
+        <form ng-submit="ctl.submit()" name="alunosForm">
+            <!-- <input type="text" ng-model="ctl.aluno.nome" name="nome" required ng-minlength="4" ng-init="ctl.aluno.nome = 'Kaique'" placeholder="Digite o nome" /> -->
+            <input type="text" class="nome" ng-model="ctl.aluno.nome" name="nome" required ng-minlength="4"
+                placeholder="Digite o nome" />
+            <span ng-show="alunosForm.nome.$error.required">Campo obrigatório</span>
+            <br />
+            <input type="text" class="nome" ng-model="ctl.aluno.sobrenome" name="sobrenome" required ng-minlength="4"
+                placeholder="Digite o sobrenome" />
+            <span ng-show="alunosForm.sobrenome.$error.required">Campo obrigatório</span>
+            <br />
+            <input type="text" ng-model="ctl.aluno.curso" placeholder="Digite o curso" />
+            <br />
+            <input type="submit" ng-disabled="alunosForm.$invalid" value="Submit" />
+        </form>
+    </section>
+
+    <section>
+        <h2>Lista de alunos</h2>
+        <div ng-repeat="aluno in ctl.alunos">
+            <label class="checkbox">
+                <input type="checkbox" ng-model="aluno.done">
+                <span class="done-{{aluno.done}}">{{aluno.nome}} - {{aluno.curso}}</span>
+            </label>
+        </div>
+    </section>
+
+    <input ng-click="ctl.limpar()" class="btn-primary" type="button" value="Limpar">
+    <br />
+    <br />
+    <input ng-click="ctl.mostrarLogs()" class="btn-primary" type="button" value="Mostrar Logs">
+</body>
+
+</html>
